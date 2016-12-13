@@ -1,8 +1,16 @@
 import $ from 'jquery';
 import Rx from 'rxjs/Rx';
+import _ from 'lodash';
 
 const btn = $('#btn');
 const txt = $('#txt');
 const cnt = $('#cnt');
 
-//Rx.Observable.from([1,2,3]).subscribe(e => console.log(e));
+const name = "mert";
+const surname = "inan";
+
+Rx.Observable.from([1,2,3]).subscribe(e => console.log(e));
+
+[1, 2, 3].forEach(e => cnt.append(e));
+
+console.log(_.partition([1, 2, 3, 4], n => n % 2));
