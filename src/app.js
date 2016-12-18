@@ -1,1 +1,1 @@
-import './react.js';
+import './lodash';
