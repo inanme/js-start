@@ -1,20 +1,27 @@
 module.exports = {
-    entry: './src/app.js',
+    entry: ['babel-polyfill', './src/app.js'],
     output: {
         path: './dist',
         filename: 'app.bundle.js'
     },
     module: {
+        preLoaders: [
+            {
+                test: /\.js[x]?$/,
+                loader: 'eslint-loader',
+                exclude: /(node_modules|bower_components)/,
+            }
+        ],
         loaders: [
             {
+                cacheDirectory: true,
                 test: /\.js[x]?$/,
                 loaders: ['babel-loader?presets[]=es2015&presets[]=react'],
                 exclude: /(node_modules|bower_components)/
-            }, {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'eslint-loader'
             }
         ]
-    }
+    },
+    resolve: {
+        extensions: ['', '.js', '.jsx']
+    },
 };
