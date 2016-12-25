@@ -1,0 +1,25 @@
+npm install -g \
+babel \
+babel-cli \
+bower \
+browserify \
+coffee \
+coffee-script \
+create-react-app \
+express \
+flow-bin \
+grunt-cli \
+grunt-init \
+gulp \
+gulp-cli \
+jasmine-node \
+live-server \
+nodemon \
+npm \
+react-native-cli \
+serve \
+traceur \
+ts-node \
+typescript \
+webpack \
+yo \
