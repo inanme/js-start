@@ -1,0 +1,6 @@
+[ignore]
+<PROJECT_ROOT>/node_modules/
+[include]
+<PROJECT_ROOT>/src/my-flow.js
+[libs]
+[options]
