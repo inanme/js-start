@@ -1,1 +1,1 @@
-import './redux-simple';
+import './transducers';

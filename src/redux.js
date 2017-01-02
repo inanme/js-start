@@ -1,5 +1,6 @@
-import {createStore, combineReducers, compose, applyMiddleware} from 'redux';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
 import logger from 'redux-logger';
+import thunk from 'redux-thunk';
 import {Map} from 'immutable';
 
 const incr = x => x + 1;
@@ -19,27 +20,25 @@ function part2(state = [], action) {
 }
 
 const myReducer = combineReducers({part1, part2});
-const finalCreateStore = compose(applyMiddleware(logger()))(createStore);
 
 // Create a Redux store holding the state of your app.
 // Its API is { subscribe, dispatch, getState }.
-let store = finalCreateStore(myReducer);
+let store = createStore(myReducer, applyMiddleware(thunk,logger()));
 
 // You can use subscribe() to update the UI in response to state changes.
 // Normally you'd use a view binding library (e.g. React Redux) rather than subscribe() directly.
 // However it can also be handy to persist the current state in the localStorage.
 
 store.subscribe(() =>
-    "x"
+        "x"
     //console.log("subs " + JSON.stringify(store.getState()))
 );
 
+console.clear();
 store.dispatch({type: "incr"});
 store.dispatch({type: "incr"});
 store.dispatch({type: "decr"});
 store.dispatch({type: "decr"});
 store.dispatch({type: "append", data: [1, 2, 3, 4]});
-store.dispatch({type: "append", data: [1, 2, 3, 4, 5]});
-store.dispatch({type: "incr_all"});
 store.dispatch({type: "incr_all"});
 store.dispatch({type: "incr_all"});
