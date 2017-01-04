@@ -1,1 +1,3 @@
-import './transducers';
+"use strict";
+
+import './react-router';

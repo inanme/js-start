@@ -1,3 +1,5 @@
+"use strict";
+
 import  Immutable from 'immutable';
 import {comp, map, filter, transduce} from 'transducers-js';
 import Benchmark from 'benchmark';

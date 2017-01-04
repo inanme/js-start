@@ -1,5 +1,7 @@
+"use strict";
+
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 
 class MyComponent extends Component {
     render() {
@@ -9,4 +11,4 @@ class MyComponent extends Component {
     }
 }
 
-ReactDOM.render(<MyComponent/>, document.getElementById('cnt'));
+render(<MyComponent/>, document.getElementById('cnt'));
