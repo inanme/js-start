@@ -1,3 +1,3 @@
 "use strict";
 
-import './react-router';
+import './axios';
